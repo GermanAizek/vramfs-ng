@@ -134,6 +134,8 @@ namespace vram {
             // Sync writes to file
             void sync();
 
+            file_t();
+
         private:
             // Data blocks if this entry is a file
             std::map<off_t, memory::block_ref> file_blocks;
@@ -143,8 +145,6 @@ namespace vram {
 
             // File size
             size_t _size = 0;
-
-            file_t();
 
             // Get the OpenCL buffer of the block if it exists or a nullptr
             memory::block_ref get_block(off_t off) const;
@@ -175,11 +175,10 @@ namespace vram {
             // Find entry by path relative to this entry
             int find(const string& path, entry_ref& entry, int filter = type::all) const;
 
+            dir_t();
+
         protected:
             std::unordered_map<string, entry_ref> _children;
-
-        private:
-            dir_t();
         };
 
         // Symlink entry

@@ -6,7 +6,7 @@
 namespace vram {
     namespace entry {
         dir_ref dir_t::make(dir_ptr parent, const string& name) {
-            auto dir = dir_ref(new dir_t());
+            auto dir = std::make_shared<dir_t>();
             dir->link(parent, name);
             return dir;
         }

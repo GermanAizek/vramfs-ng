@@ -51,6 +51,8 @@ namespace vram {
             // Best performance/size balance
             static const size_t size = 128 * 1024;
 
+            block();
+
             block(const block& other) = delete;
 
             ~block();
@@ -70,7 +72,6 @@ namespace vram {
             // True until first write (until then it contains leftover data from last use)
             bool dirty = true;
 
-            block();
         };
     }
 }

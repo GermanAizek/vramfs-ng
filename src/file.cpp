@@ -4,7 +4,7 @@
 namespace vram {
     namespace entry {
         file_ref file_t::make(dir_ptr parent, const string& name) {
-            auto file = file_ref(new file_t());
+            auto file = std::make_shared<file_t>();
             file->link(parent, name);
             return file;
         }

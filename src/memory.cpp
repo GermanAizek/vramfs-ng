@@ -123,7 +123,7 @@ namespace vram {
 
         block_ref allocate() {
             if (pool.size() != 0) {
-                return block_ref(new block());
+                return std::make_shared<block>();
             } else {
                 return nullptr;
             }
