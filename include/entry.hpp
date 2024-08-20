@@ -126,10 +126,10 @@ namespace vram {
             //
             // The specified mutex is unlocked while blocking to read, because
             // that's a non-critical section.
-            int read(off_t off, size_t size, char* data, std::mutex& wait_mutex);
+            size_t read(off_t off, size_t size, char* data, std::mutex& wait_mutex);
 
             // Write data to file, returns -error or total bytes written
-            int write(off_t off, size_t size, const char* data, bool async = true);
+            size_t write(off_t off, size_t size, const char* data, bool async = true);
 
             // Sync writes to file
             void sync();

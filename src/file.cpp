@@ -31,7 +31,7 @@ namespace vram {
             mtime(util::time());
         }
 
-        int file_t::read(off_t off, size_t size, char* data, std::mutex& wait_mutex) {
+        size_t file_t::read(off_t off, size_t size, char* data, std::mutex& wait_mutex) {
             if ((size_t) off >= _size) return 0;
             size = std::min(_size - off, size);
 
@@ -67,7 +67,7 @@ namespace vram {
             return total_read;
         }
 
-        int file_t::write(off_t off, size_t size, const char* data, bool async) {
+        size_t file_t::write(off_t off, size_t size, const char* data, bool async) {
             // Walk over blocks in write region
             off_t end_pos = off + size;
             size_t total_write = size;
