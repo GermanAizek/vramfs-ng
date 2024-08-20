@@ -23,7 +23,7 @@ namespace vram {
             return 4096;
         }
 
-        const std::unordered_map<string, entry_ref> dir_t::children() {
+        std::unordered_map<string, entry_ref> dir_t::children() {
             atime(util::time());
 
             return _children;

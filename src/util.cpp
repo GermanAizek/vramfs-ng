@@ -9,10 +9,10 @@ namespace vram {
         }
 
         void split_file_path(const string& path, string& dir, string& file) {
-            size_t p = path.rfind("/");
+            size_t p = path.rfind('/');
 
             if (p == string::npos) {
-                dir = "";
+                dir.clear();
                 file = path;
             } else {
                 dir = path.substr(0, p);

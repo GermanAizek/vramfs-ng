@@ -170,7 +170,7 @@ namespace vram {
             size_t size() const;
 
             // Not const, because it changes access time
-            const std::unordered_map<string, entry_ref> children();
+            std::unordered_map<string, entry_ref> children();
 
             // Find entry by path relative to this entry
             int find(const string& path, entry_ref& entry, int filter = type::all) const;

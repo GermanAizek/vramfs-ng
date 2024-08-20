@@ -168,7 +168,7 @@ namespace vram {
                 event.setCallback(CL_COMPLETE, async_write_dealloc, const_cast<void*>(data));
             }
 
-            last_write = event;
+            last_write = std::move(event);
             dirty = false;
         }
 
