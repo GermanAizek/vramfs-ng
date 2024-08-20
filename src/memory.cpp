@@ -104,10 +104,10 @@ namespace vram {
         }
 
         size_t increase_pool(size_t size) {
-            int block_count = 1 + (size - 1) / block::size;
+            size_t block_count = 1 + (size - 1) / block::size;
             int r;
 
-            for (int i = 0; i < block_count; i++) {
+            for (size_t i = 0; i < block_count; i++) {
                 cl::Buffer buf(context, CL_MEM_READ_WRITE, block::size, nullptr, &r);
 
                 if (r == CL_SUCCESS && clear_buffer(buf) == CL_SUCCESS) {
