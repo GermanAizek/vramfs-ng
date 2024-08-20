@@ -99,7 +99,7 @@ namespace vram {
             return total_blocks;
         }
 
-        int pool_available() {
+        size_t pool_available() {
             return pool.size();
         }
 

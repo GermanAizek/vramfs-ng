@@ -32,7 +32,7 @@ namespace vram {
 
         // Total blocks and blocks currently free
         int pool_size();
-        int pool_available();
+        size_t pool_available();
 
         // Allocate pool of memory blocks, returns actual amount allocated (in bytes)
         size_t increase_pool(size_t size);
